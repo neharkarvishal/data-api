@@ -20,5 +20,11 @@ module.exports = {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0, maxBOF: 0 }],
+    'import/prefer-default-export': 'off',
+    'no-use-before-define': ['error', { variables: false }],
+    'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
+    'no-restricted-properties': 'off',
+    'prettier/prettier': 'error',
   },
 };

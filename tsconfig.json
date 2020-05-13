@@ -5,11 +5,17 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es2017",
+    "target": "ESNext",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "incremental": true
+    "incremental": true,
+    "newLine": "lf",
+    "diagnostics": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "allowJs": true,
+    "checkJs": true
   },
   "exclude": ["node_modules", "dist"]
 }
