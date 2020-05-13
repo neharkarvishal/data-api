@@ -25,6 +25,5 @@ module.exports = {
     'no-use-before-define': ['error', { variables: false }],
     'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
     'no-restricted-properties': 'off',
-    'prettier/prettier': 'error',
   },
 };

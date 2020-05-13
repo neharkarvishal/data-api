@@ -13,9 +13,9 @@
     "newLine": "lf",
     "diagnostics": true,
     "noImplicitAny": false,
-    "noImplicitThis": false,
-    "allowJs": true,
-    "checkJs": true
+    "noImplicitThis": false
+    // "allowJs": true,
+    // "checkJs": true
   },
   "exclude": ["node_modules", "dist"]
 }
