@@ -35,4 +35,10 @@ export class LinkedListService {
 
     return this.linkedList;
   }
+
+  async prepend(value: Value): Promise<LinkedList> {
+    this.linkedList.head = new LinkedListNode(value, this.linkedList.head);
+
+    return this.linkedList;
+  }
 }

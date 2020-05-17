@@ -22,8 +22,12 @@ export class LinkedListController {
     return this.linkedListService.reset();
   }
 
-  @Post('/:value')
+  @Post('append/:value')
   async append(@Param('value') value: Value): Promise<LinkedList> {
     return this.linkedListService.append(value);
+  }
+  @Post('prepend/:value')
+  async prepend(@Param('value') value: Value): Promise<LinkedList> {
+    return this.linkedListService.prepend(value);
   }
 }
