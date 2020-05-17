@@ -1,8 +1,8 @@
 import LinkedListNode from './linked-list-node';
 
 export default class LinkedList {
-  private head?: LinkedListNode;
-  private tail?: LinkedListNode;
+  head?: LinkedListNode;
+  tail?: LinkedListNode;
 
   constructor(head = null, tail = null) {
     this.head = head;
@@ -11,11 +11,11 @@ export default class LinkedList {
 
   async toArray() {
     const nodes: LinkedListNode[] = [];
-    let concurrentNode: LinkedListNode = this.head;
+    let currentNode: LinkedListNode = this.head;
 
-    while (concurrentNode){
-      nodes.push(concurrentNode);
-      concurrentNode = concurrentNode.next;
+    while (currentNode){
+      nodes.push(currentNode);
+      currentNode = currentNode.next;
     }
 
     return nodes;

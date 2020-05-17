@@ -1,19 +1,29 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param, Post } from '@nestjs/common';
 import { LinkedListService } from './linked-list.service';
 import LinkedList from './linked-list';
-import LinkedListNode from './linked-list-node';
+import LinkedListNode, { Value } from './linked-list-node';
 
 @Controller('/linked-list')
 export class LinkedListController {
   constructor(private linkedListService: LinkedListService) {}
 
-  @Get('/raw')
+  @Get()
   async getLinkedList(): Promise<LinkedList> {
     return this.linkedListService.getLinkedList();
   }
 
-  @Get()
+  @Get('/raw')
   async getLinkedListArray(): Promise<LinkedListNode[]> {
     return this.linkedListService.getLinkedListArray();
+  }
+
+  @Post('/reset')
+  async reset(): Promise<LinkedList> {
+    return this.linkedListService.reset();
+  }
+
+  @Post('/:value')
+  async append(@Param('value') value: Value): Promise<LinkedList> {
+    return this.linkedListService.append(value);
   }
 }

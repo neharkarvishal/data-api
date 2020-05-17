@@ -1,14 +1,16 @@
+export type Value = string | number;
+
 export default class LinkedListNode {
-  private readonly value!: string;
+  value!: Value;
   next?: LinkedListNode;
 
-  constructor(value: string, next = null) {
+  constructor(value: Value, next = null) {
     this.value = value;
     this.next = next;
   }
 
   // Return string representation of Linked List Node.
-  public toString(callback?: Function): string {
+  toString(callback?: Function): string {
     if (callback && typeof callback === 'function') return callback(this.value);
 
     return `${this.value}`;
