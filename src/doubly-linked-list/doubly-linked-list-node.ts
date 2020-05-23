@@ -1,12 +1,14 @@
 import { Value } from '../type';
 
-export default class LinkedListNode {
+export default class DoublyLinkedListNode {
   value!: Value;
-  next?: LinkedListNode;
+  next?: DoublyLinkedListNode;
+  previous?: DoublyLinkedListNode;
 
-  constructor(value: Value, next = null) {
+  constructor(value: Value, next = null, previous = null) {
     this.value = value;
     this.next = next;
+    this.previous = previous;
   }
 
   // Return string representation of Linked List Node.

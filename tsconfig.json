@@ -11,11 +11,11 @@
     "baseUrl": "./",
     "incremental": true,
     "newLine": "lf",
-    "diagnostics": true,
     "noImplicitAny": false,
     "noImplicitThis": false
     // "allowJs": true,
     // "checkJs": true
+    // "diagnostics": true,
   },
   "exclude": ["node_modules", "dist"]
 }

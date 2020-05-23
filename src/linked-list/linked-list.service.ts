@@ -1,22 +1,23 @@
 import { Injectable } from '@nestjs/common';
 import LinkedList from './linked-list';
-import LinkedListNode, { Value } from './linked-list-node';
+import LinkedListNode from './linked-list-node';
+import { Value } from '../type';
 
 @Injectable()
 export class LinkedListService {
-  private linkedList: LinkedList = new LinkedList();
+  private list: LinkedList = new LinkedList();
 
   async getLinkedList(): Promise<LinkedList> {
-    return this.linkedList;
+    return this.list;
   }
 
   async getLinkedListArray(): Promise<LinkedListNode[]> {
-    return this.linkedList.toArray();
+    return this.list.toArray();
   }
 
   async reset() {
-    this.linkedList = new LinkedList();
-    return this.linkedList;
+    this.list = new LinkedList();
+    return this.list;
   }
 
   async append(value: Value): Promise<LinkedList> {
@@ -25,20 +26,20 @@ export class LinkedListService {
     // If there is no head yet, make new node the head,
     // else append new node to tail
 
-    if (!this.linkedList.head && !this.linkedList.tail) {
-      this.linkedList.head = newNode;
-      this.linkedList.tail = newNode;
+    if (!this.list.head && !this.list.tail) {
+      this.list.head = newNode;
+      this.list.tail = newNode;
     } else {
-      this.linkedList.tail.next = newNode;
-      this.linkedList.tail = newNode;
+      this.list.tail.next = newNode;
+      this.list.tail = newNode;
     }
 
-    return this.linkedList;
+    return this.list;
   }
 
   async prepend(value: Value): Promise<LinkedList> {
-    this.linkedList.head = new LinkedListNode(value, this.linkedList.head);
+    this.list.head = new LinkedListNode(value, this.list.head);
 
-    return this.linkedList;
+    return this.list;
   }
 }
