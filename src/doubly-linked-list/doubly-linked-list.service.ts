@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import DoublyLinkedList from '../doubly-linked-list/doubly-linked-list';
 import DoublyLinkedListNode from '../doubly-linked-list/doubly-linked-list-node';
 import { Value } from '../type';
+import * as Flatted from 'flatted';
 
 @Injectable()
 export class DoublyLinkedListService {
@@ -40,7 +41,8 @@ export class DoublyLinkedListService {
       this.list.tail = newNode;
     }
 
-    return this.list;
+    // returning flatted circular json
+    return JSON.parse(Flatted.stringify(this.list));
   }
 
   async prepend(value: Value): Promise<DoublyLinkedList> {
